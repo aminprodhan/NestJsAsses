@@ -6,6 +6,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entities/product.entity';
+import { CommonService } from './helper/service/common/common.service';
+import { Cart } from './product/entities/cart.entity';
+import { CartModule } from './cart/cart.module';
 
 @Module({
   imports: [
@@ -16,13 +19,14 @@ import { Product } from './product/entities/product.entity';
       username: 'root',
       password: '',
       database: 'task_nestjs',
-      entities: [Product],
+      entities: [Product,Cart],
       synchronize: true,
     }),
     ProductModule,
+    CartModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, CommonService],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {}
