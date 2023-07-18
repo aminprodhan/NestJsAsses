@@ -7,7 +7,7 @@ import { DataSource } from 'typeorm';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entities/product.entity';
 import { CommonService } from './helper/service/common/common.service';
-import { Cart } from './product/entities/cart.entity';
+import { Cart } from './cart/entities/cart.entity';
 import { CartModule } from './cart/cart.module';
 
 @Module({

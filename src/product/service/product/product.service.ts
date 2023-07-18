@@ -11,9 +11,10 @@ export class ProductService {
     ,private commonService: CommonService) {}
 
     async findAll(): Promise<Product[]> {
+        
         const query = `SELECT if('2023-07-18 00:00:00' >= dis_start_date 
-                        and '2023-07-18 00:00:00' <= dis_end_date,price - (price*.15),price) as cprice,p.* 
-                            FROM products as p`; 
+                        and '2023-07-18 00:00:00' <= dis_end_date,price - (price*.25),price) as cprice,p.* 
+                            FROM products as p  `; 
         // Replace with your actual table name
         return  await this.productRepository.query(query);
         //return this.productRepository.find();
