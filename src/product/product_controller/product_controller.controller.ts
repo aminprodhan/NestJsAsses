@@ -1,5 +1,5 @@
 import { Body, Controller, HttpStatus, Post, Req, Res } from '@nestjs/common';
-import { Response } from 'express';
+import { Response ,Request } from 'express';
 import { ProductService } from '../service/product/product.service';
 @Controller('product')
 export class ProductControllerController {
@@ -9,7 +9,7 @@ export class ProductControllerController {
         //@Body() updateCatDto: UpdateCatDto , @Req() req: Request
         //console.log(product.id);
         
-        const products = await this.productServer.paginate({limit:100,page:0});
+        const products = await this.productServer.paginate({limit:1,page:2});
 
         res.status(HttpStatus.OK).json(products);
     }
