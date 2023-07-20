@@ -6,8 +6,10 @@ import { ProductService } from '../service/product/product.service';
 export class ProductControllerController {
     constructor(private readonly productServer: ProductService) {}
     @Get("index")
-    async index(@Query() query,@Res() res:Response) { 
-        const products =await this.productServer.findAll();
+    async index(@Query() query,@Res() res:Response) {
+        console.log(query);
+         
+        const products =await this.productServer.findAll(query);
         res.status(HttpStatus.OK).json(products);
     }
     @Post("store")
