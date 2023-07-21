@@ -14,9 +14,8 @@ export class CartService {
             }
         });
     }
-    async save(cart: CartDto): Promise<Cart[]> {
-        await this.cartRepository.save(cart);
-        return this.findAll();
+    async save(cart: CartDto): Promise<Cart> {
+        return await this.cartRepository.save(cart);;
     }
     async remove(id: number): Promise<Cart[]> {
         await this.cartRepository.delete(id);

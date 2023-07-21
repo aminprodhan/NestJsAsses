@@ -10,15 +10,22 @@ import { CommonService } from './helper/service/common/common.service';
 import { Cart } from './cart/entities/cart.entity';
 import { CartModule } from './cart/cart.module';
 
+//
+//&Qg+q~%b!}77
+// cursorlt_nestjs
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'root',
-      password: '',
-      database: 'task_nestjs',
+      username: 'cursorlt_nestjs',
+      password: '&Qg+q~%b!}77',
+      database: 'cursorlt_nestjs',
+      // username: 'root',
+      // password: '',
+      // database: 'task_nestjs',
       entities: [Product,Cart],
       synchronize: true,
     }),
