@@ -10,10 +10,6 @@ import { CommonService } from './helper/service/common/common.service';
 import { Cart } from './cart/entities/cart.entity';
 import { CartModule } from './cart/cart.module';
 
-//
-//&Qg+q~%b!}77
-// cursorlt_nestjs
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
